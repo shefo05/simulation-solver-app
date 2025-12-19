@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import RandomGrid from '../components/RandomGrid'
 
 interface DistItem {
@@ -107,11 +107,6 @@ const MultiServer = () => {
     return dist
   }
 
-  // Update Distribution Table Columns
-  const updateDistributionTableColumns = (rows: { time: number; prob: number }[], dist: DistItem[]) => {
-    // This is handled by rendering the dist data in the table
-  }
-
   // Get Time from RN
   const getT = (rn: number, dist: DistItem[]): number => {
     if (rn === 0) rn = 100
@@ -214,10 +209,6 @@ const MultiServer = () => {
     const iatD = getDist(iatRows)
     const ableD = getDist(ableRows)
     const bakerD = getDist(bakerRows)
-    
-    updateDistributionTableColumns(iatRows, iatD)
-    updateDistributionTableColumns(ableRows, ableD)
-    updateDistributionTableColumns(bakerRows, bakerD)
     
     let iatRNs = iatRN.split(',').filter(x => x.trim() !== '').map(Number)
     let servRNs = servRN.split(',').filter(x => x.trim() !== '').map(Number)

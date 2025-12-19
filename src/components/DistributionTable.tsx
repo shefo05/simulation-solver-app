@@ -13,11 +13,10 @@ interface DistributionRow {
 interface DistributionTableProps {
   rows: DistributionRow[]
   onRowsChange: (rows: DistributionRow[]) => void
-  tableId: string
   valueLabel?: string
 }
 
-const DistributionTable = ({ rows, onRowsChange, tableId, valueLabel = 'Time' }: DistributionTableProps) => {
+const DistributionTable = ({ rows, onRowsChange, valueLabel = 'Time' }: DistributionTableProps) => {
   const [localRows, setLocalRows] = useState<DistributionRow[]>(rows)
 
   useEffect(() => {
